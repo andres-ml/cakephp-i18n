@@ -1,5 +1,7 @@
 <?php
 
+use Aml\I18n\I18n;
+
 if (!function_exists('__t')) {
     
     /**

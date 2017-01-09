@@ -1,5 +1,5 @@
 <?php
-namespace I18n\I18n;
+namespace Aml\I18n;
 
 use Cake\I18n\I18n as CakeI18n;
 

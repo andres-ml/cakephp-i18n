@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Shell\Task;
+namespace Aml\Shell\Task;
 
 use Cake\Shell\Task\ExtractTask as CakeExtractTask;
 

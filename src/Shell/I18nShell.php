@@ -2,7 +2,7 @@
 
 /**
  */
-namespace Aml\Shell;
+namespace Aml\I18n\Shell;
 
 use Cake\Shell\I18nShell as CakeI18nShell;
 

@@ -38,4 +38,9 @@ Plugin::load('Aml/I18n');
 Wherever you would use [`__()`](https://book.cakephp.org/3.0/en/core-libraries/global-constants-and-functions.html#__),
 you can now use `__t()`.
 
-Remember to create a _domain_.po file next to each default.po file for each domain you want to support. ([https://book.cakephp.org/3.0/en/core-libraries/internationalization-and-localization.html#language-files](https://book.cakephp.org/3.0/en/core-libraries/internationalization-and-localization.html#language-files)
+Remember to create a _domain_.po file next to each default.po file for each domain you want to support. ([https://book.cakephp.org/3.0/en/core-libraries/internationalization-and-localization.html#language-files](https://book.cakephp.org/3.0/en/core-libraries/internationalization-and-localization.html#language-files))
+
+To automatically generate the default.pot base file:
+```
+bin/cake aml/I18n.i18n extract
+```

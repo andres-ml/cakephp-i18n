@@ -2,6 +2,18 @@
     "name": "andres-ml/cakephp-i18n",
     "description": "I18n plugin for CakePHP",
     "type": "cakephp-plugin",
+    "keywords": [
+        "cakephp",
+        "i18n"
+    ],
+    "homepage": "https://github.com/andres-ml/cakephp-i18n",
+    "authors": [
+        {
+            "name":"Andrés ML",
+            "role":"Author",
+            "homepage":"https://github.com/andres-ml"
+        }
+    ],
     "require": {
         "php": ">=5.4.16",
         "cakephp/cakephp": "~3.0"
@@ -11,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Aml\\I18n\\": "src/I18n"
+            "Aml\\I18n\\": "src"
         },
         "files": [
             "src/I18n/functions.php"

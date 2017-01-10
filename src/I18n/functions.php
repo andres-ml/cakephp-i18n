@@ -14,12 +14,7 @@ if (!function_exists('__t')) {
      */
     function __t($singular, $args = null)
     {
-        if (!$singular) {
-            return;
-        }
-        
-        $arguments = func_num_args() === 2 ? (array) $args : array_slice(func_get_args(), 1);
-        return I18n::translator()->translate($singular, $arguments);
+        return __d(I18n::domain(), $singular, $args);
     }
 
 }

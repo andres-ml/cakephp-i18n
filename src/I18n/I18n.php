@@ -35,20 +35,4 @@ class I18n extends CakeI18n {
         return self::$_domain;
     }
     
-    /**
-     * Override CakePHP's I18n::translator() to allow custom default domain/names.
-     * 
-     * @param type $name
-     * @param type $locale
-     * @param \Cake\I18n\callable $loader
-     * @return \Aura\Intl\Translator|void The configured translator.
-     */
-    public static function translator($name = null, $locale = null, callable $loader = null) {
-        if ($name === null) {
-            $name = self::$_domain;
-        }
-        
-        return parent::translator($name, $locale, $loader);
-    }
-    
 }

@@ -1,32 +1,34 @@
 <?php
+declare(strict_types=1);
 
-namespace Aml\I18n\Shell\Task;
+namespace Aml\I18n\Command;
 
-use Cake\Console\Shell;
-use Cake\Shell\Task\ExtractTask;
+use Cake\Console\Arguments;
+use Cake\Console\ConsoleIo;
 
 /**
- * @inheritDoc
+ * Language string extractor
  */
-class FullExtractTask extends ExtractTask
+class I18nExtractCommand extends \Cake\Command\I18nExtractCommand
 {
-
     
     /**
-     * Add __t() token
-     * 
-     * @inheritDoc
+     * Extract tokens out of all files to be processed
+     *
+     * @param \Cake\Console\Arguments $args The io instance
+     * @param \Cake\Console\ConsoleIo $io The io instance
+     * @return void
      */
-    protected function _extractTokens()
+    protected function _extractTokens(Arguments $args, ConsoleIo $io): void
     {
         /** @var \Cake\Shell\Helper\ProgressHelper $progress */
-        $progress = $this->helper('progress');
+        $progress = $io->helper('progress');
         $progress->init(['total' => count($this->_files)]);
-        $isVerbose = $this->param('verbose');
+        $isVerbose = $args->getOption('verbose');
 
         $functions = [
             '__' => ['singular'],
-            '__t' => ['singular'],
+            '__t' => ['singular'], // new function
             '__n' => ['singular', 'plural'],
             '__d' => ['domain', 'singular'],
             '__dn' => ['domain', 'singular', 'plural'],
@@ -40,7 +42,7 @@ class FullExtractTask extends ExtractTask
         foreach ($this->_files as $file) {
             $this->_file = $file;
             if ($isVerbose) {
-                $this->out(sprintf('Processing %s...', $file), 1, Shell::VERBOSE);
+                $io->verbose(sprintf('Processing %s...', $file));
             }
 
             $code = file_get_contents($file);
@@ -57,7 +59,7 @@ class FullExtractTask extends ExtractTask
                 unset($allTokens);
 
                 foreach ($functions as $functionName => $map) {
-                    $this->_parse($functionName, $map);
+                    $this->_parse($io, $functionName, $map);
                 }
             }
 
@@ -67,5 +69,5 @@ class FullExtractTask extends ExtractTask
             }
         }
     }
-
+    
 }

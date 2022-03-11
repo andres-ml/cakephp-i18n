@@ -23,10 +23,10 @@ class I18n extends CakeI18n {
     /**
      * Gets/sets default domain/name.
      * 
-     * @param string $domain
+     * @param ?string $domain
      * @return string|void
      */
-    public static function domain(string $domain = null)
+    public static function domain(?string $domain = null)
     {
         if ($domain !== null) {
             self::$_domain = $domain;

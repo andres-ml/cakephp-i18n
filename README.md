@@ -66,7 +66,7 @@ Wherever you would use [`__x()`](https://book.cakephp.org/4.0/en/core-libraries/
 you can now use `__tx()`.
 
 Wherever you would use [`__xn()`](https://book.cakephp.org/4.0/en/core-libraries/global-constants-and-functions.html#__xn),
-you can now use `__txv()`.
+you can now use `__txn()`.
 
 Remember to create a _domain_.po file next to each default.po file for each domain you want to support. ([https://book.cakephp.org/4.0/en/core-libraries/internationalization-and-localization.html#language-files](https://book.cakephp.org/4.0/en/core-libraries/internationalization-and-localization.html#language-files))
 

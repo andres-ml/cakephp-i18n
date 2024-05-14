@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Aml\I18n\Command;
 
+use Cake\Command\Helper\ProgressHelper;
 use Cake\Console\Arguments;
 use Cake\Console\ConsoleIo;
 
@@ -21,8 +22,8 @@ class I18nExtractCommand extends \Cake\Command\I18nExtractCommand
      */
     protected function _extractTokens(Arguments $args, ConsoleIo $io): void
     {
-        /** @var \Cake\Shell\Helper\ProgressHelper $progress */
         $progress = $io->helper('progress');
+        assert($progress instanceof ProgressHelper);
         $progress->init(['total' => count($this->_files)]);
         $isVerbose = $args->getOption('verbose');
 
@@ -48,7 +49,7 @@ class I18nExtractCommand extends \Cake\Command\I18nExtractCommand
                 $io->verbose(sprintf('Processing %s...', $file));
             }
 
-            $code = file_get_contents($file);
+            $code = (string)file_get_contents($file);
 
             if (preg_match($pattern, $code) === 1) {
                 $allTokens = token_get_all($code);

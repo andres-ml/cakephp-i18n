@@ -31,13 +31,13 @@ class I18nExtractCommand extends \Cake\Command\I18nExtractCommand
             '__' => ['singular'],
             '__t' => ['singular'], // new function
             '__n' => ['singular', 'plural'],
-            '__tn' => ['singular', 'plural'], //new function
+            '__tn' => ['singular', 'plural'], // new function
             '__d' => ['domain', 'singular'],
             '__dn' => ['domain', 'singular', 'plural'],
             '__x' => ['context', 'singular'],
-            '__tx' => ['context', 'singular'], //new function
+            '__tx' => ['context', 'singular'], // new function
             '__xn' => ['context', 'singular', 'plural'],
-            '__txn' => ['context', 'singular', 'plural'], //new function
+            '__txn' => ['context', 'singular', 'plural'], // new function
             '__dx' => ['domain', 'context', 'singular'],
             '__dxn' => ['domain', 'context', 'singular', 'plural'],
         ];

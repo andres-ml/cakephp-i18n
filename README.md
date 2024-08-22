@@ -4,23 +4,23 @@ Allows setting a default domain for translations.
 
 Before:
 ```php
-__('members');                          // outputs members
-__d('hospitals', 'members');            // outputs patients
+__('members'); // outputs members
+__d('hospitals', 'members'); // outputs patients
 ```
 
 ```php
-__n('Record', 'Records', 2);            // outputs Record or Records
-__dn('hospitals', 'Record', 'Records', 2) // outputs Visit or Visits
+__n('Record', 'Records', 2); // outputs Record or Records
+__dn('hospitals', 'Record', 'Records', 2); // outputs Visit or Visits
 ```
 
 ```php
-__x('written communication', 'He read the first letter') // Adds additional context for use during translation
-__dx('hospitals', 'eye chart viewing', 'He read the first letter') // Adds additional context for use during translation
+__x('written communication', 'He read the first letter'); // Adds additional context for use during translation
+__dx('hospitals', 'eye chart viewing', 'He read the first letter'); // Adds additional context for use during translation
 ```
 
 ```php
-__xn('character', 'Spy', 'Spies', 2) // Adds additional context for use during translation
-__dxn('hospitals', 'to see', 'Spy', 'Spies', 2) // Adds additional context for use during translation
+__xn('character', 'Spy', 'Spies', 2); // Adds additional context for use during translation
+__dxn('hospitals', 'to see', 'Spy', 'Spies', 2); // Adds additional context for use during translation
 ```
 
 With plugin:
@@ -29,14 +29,14 @@ use Aml\I18n\I18n;
 
 __('members');                      // outputs members
 __t('members');                     // outputs members
-__n('Record', 'Records', 2)         // outputs Records
-__tn('Record', 'Records', 1)        // outputs Record
+__n('Record', 'Records', 2);        // outputs Records
+__tn('Record', 'Records', 1);       // outputs Record
 
 I18n::domain('hospitals');
 __('members');                      // still outputs members
 __t('members');                     // outputs patients
-__n('Record', 'Records', 2)         // outputs Visits
-__tn('Record', 'Records', 1)        // outputs Visit
+__n('Record', 'Records', 2);        // outputs Visits
+__tn('Record', 'Records', 1);       // outputs Visit
 ```
 
 ## Installation

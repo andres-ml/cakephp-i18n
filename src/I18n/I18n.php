@@ -30,7 +30,6 @@ class I18n extends CakeI18n {
     {
         if ($domain !== null) {
             self::$_domain = $domain;
-
             return;
         }
         
